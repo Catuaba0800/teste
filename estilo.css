@@ -1,0 +1,37 @@
+.imagem{background: url(cachorro.jpg.JPG);
+width: 200px;height: 200px;
+display: block;
+background-size: contain;
+}
+.imagem:hover{
+    background-position: 0px 50px;
+.imagem :active{background-position: 0px 100px;}
+.imagem color: ::after 0px
+;
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimento de Imagem</title>
+    <style>
+        .imagem-animada {
+            transition: transform 0.5s ease; /* Suaviza a transição */
+            display: block; /* Para evitar espaços extras ao redor da imagem */
+            margin: auto; /* Para centralizar a imagem na página */
+        }
+
+        .imagem-animada:hover {
+            transform: translateX(20px); /* Move a imagem 20 pixels para a direita ao passar o mouse */
+            /* Você pode também usar outras transformações, como rotate(), scale(), etc. */
+        }
+    </style>
+</head>
+<body>
+
+<img src="url_da_sua_imagem_aqui.jpg" alt="Descrição da imagem" class="imagem-animada">
+
+</body>
+</html>
+}

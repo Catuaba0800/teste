@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Imagem Aleatória ao Passar o Mouse</title>
+    <style>
+        body, html {
+            height: 100%; /* Ajustado para 100% para cobrir toda a altura da página */
+            margin: 0; /* Removido a margem extra */
+            overflow: hidden; /* Previne a rolagem */
+        }
+        .centralizado {
+            text-align: center;
+        }
+        .imagem-escondida {
+            position: absolute;
+            display: none; /* Esconde a imagem inicialmente */
+            width: 100px; /* Define a largura da imagem */
+            height: 100px; /* Define a altura da imagem */
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="centralizado">PEGUE A NINA</h1>
+
+<img src="cachorro.jpg.JPG" alt="cachorro" id="imagemSurpresa" class="imagem-escondida">
+
+<script>
+    const imagem = document.getElementById('imagemSurpresa');
+
+    document.addEventListener('mousemove', (event) => {
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        
+        // Gera coordenadas X e Y aleatórias dentro dos limites da janela
+        const randomX = Math.floor(Math.random() * screenWidth);
+        const randomY = Math.floor(Math.random() * screenHeight);
+
+        // Certifica-se de que a imagem não saia da tela
+        const maxX = screenWidth - imagem.offsetWidth;
+        const maxY = screenHeight - imagem.offsetHeight;
+
+        // Atualiza a posição da imagem
+        imagem.style.left = Math.min(randomX, maxX) + 'px';
+        imagem.style.top = Math.min(randomY, maxY) + 'px';
+
+        // Mostra a imagem
+        imagem.style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
